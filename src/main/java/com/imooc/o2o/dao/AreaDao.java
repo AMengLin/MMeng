@@ -8,7 +8,7 @@ public interface AreaDao {
 	
 	/**
 	 * 查询区域列表
-	 * @return areaList
+	 * @return areaList(所有的区域对象)
 	 */
 	List<Area> queryArea();
 }
