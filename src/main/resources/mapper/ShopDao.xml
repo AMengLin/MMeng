@@ -6,10 +6,9 @@
 <mapper namespace="com.imooc.o2o.dao.ShopDao" >
 	<insert id="insertShop">
 		insert into tb_shop(shop_id,owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,
-							shop_img,priority,create_time,last_edit_time,enable_status,advice)
-							value(#{shopId}#{PersonInfo.owner_id}#{Area.area_id},#{shop_category_id},#{shop_name},#{shop_desc}
-							,#{shop_addr},#{PersonInfo.phone},#{shop_img},#{priority},#{create_time},#{last_edit_time}
-							,#{enable_status},#{advice})
+							shop_img,priority,create_time,enable_status,advice)
+							value(#{shopId}#{owner.userId}#{area.areaId},#{shopCategory.shopCategoryId},#{shop_name},#{shop_desc}
+							,#{shop_addr},#{PersonInfo.phone},#{shop_img},#{priority},#{create_time},#{enable_status},#{advice})
 	</insert>	
 </mapper>      	
 
