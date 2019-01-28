@@ -1,6 +1,7 @@
-2019-01-22 11:39:49.126 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - ==>  Preparing: select area_id,area_name,priority,create_time,last_edit_time from tb_area order by priority desc 
-2019-01-22 11:39:49.255 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - ==> Parameters: 
-2019-01-22 11:39:49.333 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - <==      Total: 2
-2019-01-22 11:41:16.841 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - ==>  Preparing: select area_id,area_name,priority,create_time,last_edit_time from tb_area order by priority desc 
-2019-01-22 11:41:16.908 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - ==> Parameters: 
-2019-01-22 11:41:16.943 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - <==      Total: 2
+2019-01-28 15:58:13.228 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
+2019-01-28 15:58:13.357 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: null, null, null, 宅小野奶茶(String), 宅小野奶茶(String), 上川店(String), 123456(String), null, 1(Integer), 2019-01-28 15:58:10.963(Timestamp), 0(Integer), null
+2019-01-28 16:03:53.332 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
+2019-01-28 16:03:53.432 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 4(Long), 宅小野奶茶(String), 宅小野奶茶(String), 上川店(String), 123456(String), null, 1(Integer), 2019-01-28 16:03:52.572(Timestamp), 0(Integer), null
+2019-01-28 16:12:40.807 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
+2019-01-28 16:12:40.897 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶(String), 宅小野奶茶(String), 上川店(String), 123456(String), null, 1(Integer), 2019-01-28 16:12:40.045(Timestamp), 0(Integer), null
+2019-01-28 16:12:41.015 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
