@@ -3,7 +3,7 @@ package com.imooc.o2o.entity;
 import java.util.Date;
 
 /**
- * 区域信息
+ * 区域信息j
  * @author xiangze
  *
  */
