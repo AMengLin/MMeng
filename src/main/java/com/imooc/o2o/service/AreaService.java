@@ -6,7 +6,7 @@ import com.imooc.o2o.entity.Area;
 public interface AreaService {
 	
 	/**
-	 * 获取区域列表
+	 * 获取区域列表sss
 	 * @return
 	 */
 	List<Area> getList();
