@@ -14,11 +14,11 @@ public class AreaServiceImpl implements AreaService{
 	
 	@Autowired
 	private AreaDao areaDao;
-	
-	@Override
+
+	/**
+	 * 获取区域列表
+	 */
 	public List<Area> getList() {
 		return areaDao.queryArea();
 	}
-	
-
 }

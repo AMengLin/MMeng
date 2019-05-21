@@ -7,8 +7,8 @@ import com.imooc.o2o.entity.Area;
 public interface AreaDao {
 	
 	/**
-	 * 查询区域列表e
-	 * @return areaList(所有的区域对象)
+	 * 查询区域
+	 * @return
 	 */
 	List<Area> queryArea();
 }

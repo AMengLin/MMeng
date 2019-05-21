@@ -2,10 +2,22 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="com.imooc.o2o.dao.AreaDao"> 
-	<select id="queryArea" resultType="com.imooc.o2o.entity.Area">
-		select area_id,area_name,priority,create_time,last_edit_time from tb_area
-			order by priority desc
+<mapper namespace="com.imooc.o2o.dao.AreaDao">
+	<!-- <select id="queryArea" resultMap="BasePlusResultMap">
+		select
+		area_id,area_name,priority from tb_area
+		order by priority desc
 	</select>
-</mapper>     
+	<resultMap id="BasePlusResultMap" type="com.imooc.o2o.entity.Area">
+		<id column="area_id" jdbcType="INTEGER" property="areaId" />
+		<result column="area_name" jdbcType="VARCHAR" property="areaName" />
+		<result column="priority" jdbcType="INTEGER" property="priority" />
+	</resultMap> -->
+	<select id="queryArea" resultType="com.imooc.o2o.entity.Area">
+		SELECT area_id, area_name,
+		priority, create_time, last_edit_time
+		FROM tb_area
+		ORDER BY priority
+		DESC
+	</select>
+</mapper>
