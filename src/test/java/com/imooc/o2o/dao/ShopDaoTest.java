@@ -20,7 +20,7 @@ public class ShopDaoTest extends BaseTest{
 	
 	@Test
 	public void insertShop(){
-		//创建商品对象
+		//创建商品对象1
 		Shop shop = new Shop();
 		//创建个人信息对象
 		PersonInfo personInfo = new PersonInfo();
