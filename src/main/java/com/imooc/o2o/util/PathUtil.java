@@ -1,17 +1,22 @@
 package com.imooc.o2o.util;
 
 public class PathUtil {
-	
-	private static String seperator = System.getProperty("file.seperator");
-	public static String getImageBasePath(){
+	private static String seperator = System.getProperty("file.separator");
+
+	public static String getImgBasePath() {
 		String os = System.getProperty("os.name");
-		String bathPath = "";
-		if(os.toLowerCase().startsWith("win")){
-			bathPath="D:/projectedev/image/";
-		}else{
-			bathPath = "home/meng/image";
+		String basePath = "";
+		if (os.toLowerCase().startsWith("win")) {
+			basePath = "D:/projectdev/image";
+		} else {
+			basePath = "/Users/baidu/work/image";
 		}
-		bathPath=bathPath.replace("/", seperator);
-		return bathPath;
+		basePath = basePath.replace("/", seperator);
+		return basePath;
+	}
+
+	public static String getShopImagePath(long shopId) {
+		String imagePath = "D:/upload/images/item/shop/" + shopId + "/";
+		return imagePath.replace("/", seperator);
 	}
 }
