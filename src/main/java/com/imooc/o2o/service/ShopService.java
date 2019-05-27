@@ -2,6 +2,7 @@ package com.imooc.o2o.service;
 
 import java.io.File;
 
+import com.imooc.o2o.dto.ImageHolder;
 import com.imooc.o2o.dto.ShopExecution;
 import com.imooc.o2o.entity.Shop;
 
@@ -13,5 +14,6 @@ public interface ShopService {
 	 * @param shopImg 店铺图片
 	 * @return 
 	 */
-	ShopExecution addShop(Shop shop,File shopImg);
+	ShopExecution addShop(Shop shop,ImageHolder thumbnail);
+	
 }
