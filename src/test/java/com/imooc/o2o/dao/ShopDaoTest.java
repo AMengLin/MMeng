@@ -20,7 +20,7 @@ public class ShopDaoTest extends BaseTest{
 	
 	@Test
 	public void insertShop(){
-		//创建商品对象1
+		//创建商品对象13
 		Shop shop = new Shop();
 		//创建个人信息对象
 		PersonInfo personInfo = new PersonInfo();
@@ -37,10 +37,10 @@ public class ShopDaoTest extends BaseTest{
 		shop.setArea(area);
 		shop.setShopCategory(shopCategory);
 		//给店铺添加测试数据
-		shop.setShopName("宅小野奶茶");
-		shop.setShopDesc("好喝的奶茶");
-		shop.setShopAddr("上川店");
-		shop.setPhone("123456");
+		shop.setShopName("宅小野奶茶1");
+		shop.setShopDesc("好喝的奶茶2");
+		shop.setShopAddr("上川店3");
+		shop.setPhone("1234567");
 		shop.setPriority(1);
 		shop.setCreateTime(new Date());
 		shop.setEnableStatus(0);
