@@ -5,7 +5,6 @@ public class PathUtil {
 
 	/**
 	 * 图片保存的根目录
-	 * 
 	 * @return
 	 */
 	public static String getImgBasePath() {
@@ -21,8 +20,7 @@ public class PathUtil {
 	}
 
 	/**
-	 * 根据业务不同，返回储存的路径
-	 * 
+	 * 根据业务不同，返回储存的路径（店铺图片存储的相对值路径）
 	 * @param shopId
 	 * @return
 	 */

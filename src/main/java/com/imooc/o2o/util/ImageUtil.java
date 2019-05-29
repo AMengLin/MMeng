@@ -82,10 +82,9 @@ public class ImageUtil {
 	}
 
 	/**
-	 * 创建目标路径所涉及的目录，即/home/work/xiangze/xxx.jpg, 那么 home work xiangze 三个文件夹都得创建
-	 * 
-	 * @param targerAddr
-	 *            目标文件所属的文件夹的对相对路径
+	 * 创建目标路径所涉及的目录，即/home/work/xiangze/xxx.jpg, 
+	 * 那么 home work xiangze 三个文件夹都得创建
+	 * @param targerAddr 目标文件所属的文件夹的对相对路径
 	 */
 	private static void makeDirPath(String targetAddr) {
 		// 获取绝对路径

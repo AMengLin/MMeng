@@ -5,3 +5,15 @@
 2019-01-28 16:12:40.807 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
 2019-01-28 16:12:40.897 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶(String), 宅小野奶茶(String), 上川店(String), 123456(String), null, 1(Integer), 2019-01-28 16:12:40.045(Timestamp), 0(Integer), null
 2019-01-28 16:12:41.015 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2019-05-27 15:01:40.584 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? 
+2019-05-27 15:01:40.844 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述555(String), 测试地址(String), 2019-05-27 15:01:39.412(Timestamp)
+2019-05-27 15:01:41.044 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - <==    Updates: 10
+2019-05-27 15:02:33.116 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? 
+2019-05-27 15:02:33.225 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述556(String), 测试地址(String), 2019-05-27 15:02:32.024(Timestamp)
+2019-05-27 15:02:33.364 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - <==    Updates: 10
+2019-05-27 15:03:38.997 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? 
+2019-05-27 15:03:39.104 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述557(String), 测试地址(String), 2019-05-27 15:03:37.828(Timestamp)
+2019-05-27 15:03:39.170 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - <==    Updates: 10
+2019-05-27 15:04:51.336 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? where shop_id=? 
+2019-05-27 15:04:51.441 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述558(String), 测试地址(String), 2019-05-27 15:04:50.385(Timestamp), 39(Long)
+2019-05-27 15:04:51.855 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
