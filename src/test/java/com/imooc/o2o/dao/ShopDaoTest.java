@@ -40,7 +40,7 @@ public class ShopDaoTest extends BaseTest{
 		shop.setShopName("宅小野奶茶1");
 		shop.setShopDesc("好喝的奶茶2");
 		shop.setShopAddr("上川店3");
-		shop.setPhone("1234567");
+		shop.setPhone("1234567111111");
 		shop.setPriority(1);
 		shop.setCreateTime(new Date());
 		shop.setEnableStatus(0);
@@ -52,9 +52,9 @@ public class ShopDaoTest extends BaseTest{
 	@Test
 	public void testUpdateShop() {
 		Shop shop = new Shop();
-		shop.setShopId(39L);
+		shop.setShopId(43L);
 		shop.setShopDesc("测试描述558");
-		shop.setShopAddr("测试地址");
+		shop.setShopAddr("8888888");
 		shop.setLastEditTime(new Date());
 		int effectedNum = shopDao.updateShop(shop);
 		assertEquals(1, effectedNum);

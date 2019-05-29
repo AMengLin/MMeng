@@ -14,6 +14,8 @@ import com.imooc.o2o.entity.Shop;
 import com.imooc.o2o.enums.ShopStateEnum;
 import com.imooc.o2o.exceptions.ShopOperationException;
 import com.imooc.o2o.service.ShopService;
+import com.imooc.o2o.util.ImageUtil;
+import com.imooc.o2o.util.PathUtil;
 
 @Service
 public class ShopServiceImpl implements ShopService {
@@ -29,7 +31,7 @@ public class ShopServiceImpl implements ShopService {
 	 * @return
 	 */
 	@Transactional
-	public ShopExecution addShop(Shop shop, ImageHolder thumbnail) {
+	public ShopExecution addShop(Shop shop, File shopImg) {
 
 		// 判断商铺信息是否为空
 		if (shop == null) {
@@ -44,14 +46,18 @@ public class ShopServiceImpl implements ShopService {
 			shop.setLastEditTime(new Date());
 			// 调用dao层，添加商铺
 			int effectedNum = shopDao.insertShop(shop);
+			System.out.println("添加商铺"+effectedNum);
 			// 如果影响行数<=0，添加失败
 			if (effectedNum <= 0) {
 				throw new ShopOperationException("店铺创建失败");
 			} else {
-				if (thumbnail.getImage() != null) {
+				if (shopImg != null) {
+					System.out.println(effectedNum);
 					// 存储图片
 					try {
-						//addShopImg(shop, thumbnail);
+						addShopImg(shop, shopImg);
+						//System.out.println(effectedNum+"s");
+						System.out.println("是否成功进去。。。");
 					} catch (Exception e) {
 						throw new ShopOperationException("addShopImg error:" + e.getMessage());
 					}
@@ -65,15 +71,16 @@ public class ShopServiceImpl implements ShopService {
 		} catch (Exception e) {
 			throw new ShopOperationException("addShop error:" + e.getMessage());
 		}
-		//返回审核中的商品枚举类型
-		return new ShopExecution(ShopStateEnum.CHECK,shop);
+		// 返回审核中的商品枚举类型
+		return new ShopExecution(ShopStateEnum.CHECK, shop);
 	}
-
-//	private void addShopImg(Shop shop, ImageHolder thumbnail) {
-//		// 获取shop图片目录的相对值路径
-//		String dest = PathUtil.getShopImagePath(shop.getShopId());
-//		String shopImgAddr = ImageUtil.generateThumbnail(thumbnail, dest);
-//		shop.setShopImg(shopImgAddr);
-//	}
+	
+	private void addShopImg(Shop shop, File shopImg) { 
+		// 获取shop图片目录的相对值路径
+		String dest = PathUtil.getShopImagePath(shop.getShopId());
+		//System.out.println("地址:"+dest.toString());
+		String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
+		shop.setShopImg(shopImgAddr);
+	}
 
 }
