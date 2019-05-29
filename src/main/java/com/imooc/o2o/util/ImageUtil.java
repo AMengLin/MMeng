@@ -72,6 +72,7 @@ public class ImageUtil {
 		try {
 			// 调用Thumbnails生成有水印的缩略图
 			Thumbnails.of(thumbnail).size(200, 200)
+			////ImageIO.read(new File(basePath + "/watermark.jpg") : 读取水印图片的路径
 					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
 					.outputQuality(0.8f).toFile(dest);
 		} catch (IOException e) {
