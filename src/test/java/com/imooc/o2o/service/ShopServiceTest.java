@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.imooc.o2o.BaseTest;
-import com.imooc.o2o.dao.ShopDao;
 import com.imooc.o2o.dto.ShopExecution;
 import com.imooc.o2o.entity.Area;
 import com.imooc.o2o.entity.PersonInfo;
@@ -44,13 +43,14 @@ public class ShopServiceTest extends BaseTest{
 				shop.setShopName("宅小野奶茶35");
 				shop.setShopDesc("好喝的奶茶35");
 				shop.setShopAddr("上川店35");
-				shop.setPhone("1234567111111");
+				shop.setPhone("18613650");
 				shop.setCreateTime(new Date());
 				shop.setPriority(1);
 				//设置状态为check，审核状态
 				shop.setEnableStatus(ShopStateEnum.CHECK.getState());
 				shop.setAdvice("审核中");
-				File shopImg = new File("D:/Users/baidu/work/image/xiaohuangren.jpg");
+				File shopImg = new File("C:/Users/Administrator/Desktop/xiaohuangren.jpg");
+				System.out.println(shopImg.toString());
 				ShopExecution se = shopService.addShop(shop, shopImg );
 				assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
 	}

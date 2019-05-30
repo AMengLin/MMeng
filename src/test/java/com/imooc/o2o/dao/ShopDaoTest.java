@@ -37,10 +37,10 @@ public class ShopDaoTest extends BaseTest{
 		shop.setArea(area);
 		shop.setShopCategory(shopCategory);
 		//给店铺添加测试数据
-		shop.setShopName("宅小野奶茶1");
-		shop.setShopDesc("好喝的奶茶2");
-		shop.setShopAddr("上川店3");
-		shop.setPhone("1234567111111");
+		shop.setShopName("宅小野奶茶88");
+		shop.setShopDesc("好喝的奶茶88");
+		shop.setShopAddr("上川店88");
+		shop.setPhone("123456711111188");
 		shop.setPriority(1);
 		shop.setCreateTime(new Date());
 		shop.setEnableStatus(0);

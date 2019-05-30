@@ -1,6 +1,7 @@
 package com.imooc.o2o.util;
 
 public class PathUtil {
+	
 	private static String seperator = System.getProperty("file.separator");
 
 	/**
@@ -13,10 +14,10 @@ public class PathUtil {
 		if (os.toLowerCase().startsWith("win")) {
 			basePath = "D:/projectdev/image";
 		} else {
-			basePath = "/Users/baidu/work/image";
+			basePath = "D:/Users/baidu/work/image";
 		}
 		basePath = basePath.replace("/", seperator);
-		return basePath;
+		return basePath;	
 	}
 
 	/**

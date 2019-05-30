@@ -31,7 +31,7 @@ public class ShopServiceImpl implements ShopService {
 	 * @return
 	 */
 	@Transactional
-	public ShopExecution addShop(Shop shop, File shopImg) {
+	public ShopExecution addShop(Shop shop, File shopImg) throws ShopOperationException{
 
 		// 判断商铺信息是否为空
 		if (shop == null) {
@@ -46,6 +46,7 @@ public class ShopServiceImpl implements ShopService {
 			shop.setLastEditTime(new Date());
 			// 调用dao层，添加商铺
 			int effectedNum = shopDao.insertShop(shop);
+			System.out.println(shop.getShopId());
 			System.out.println("添加商铺"+effectedNum);
 			// 如果影响行数<=0，添加失败
 			if (effectedNum <= 0) {
@@ -81,6 +82,7 @@ public class ShopServiceImpl implements ShopService {
 		//System.out.println("地址:"+dest.toString());
 		String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
 		shop.setShopImg(shopImgAddr);
+		
 	}
 
 }

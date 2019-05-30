@@ -63,7 +63,7 @@ public class ImageUtil {
 		// 如果目标不存在，则自动创建
 		makeDirPath(targerAddr);
 		// 获取文件储存的相对路径（带文件名）
-		String relativeAddr = realFileName + extension + targerAddr;
+		String relativeAddr = targerAddr+realFileName + extension  ;
 		// 获取文件要保存的目标路径
 		// 打印路径
 		File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
@@ -121,9 +121,9 @@ public class ImageUtil {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+		/*String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		Thumbnails.of(new File("D:\\Users\\baidu\\work\\image\\xiaohuangren.jpg")).size(200, 200)
 				.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
-				.outputQuality(0.8f).toFile("D:/Users/baidu/work/image/xiaohuangrennew.jpg");
+				.outputQuality(0.8f).toFile("D:/Users/baidu/work/image/xiaohuangrennew.jpg");*/
 	}
 }
