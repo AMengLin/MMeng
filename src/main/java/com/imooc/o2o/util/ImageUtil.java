@@ -63,7 +63,7 @@ public class ImageUtil {
 		// 如果目标不存在，则自动创建
 		makeDirPath(targerAddr);
 		// 获取文件储存的相对路径（带文件名）
-		String relativeAddr = targerAddr+realFileName + extension  ;
+		String relativeAddr = targerAddr+realFileName + extension;
 		// 获取文件要保存的目标路径
 		// 打印路径
 		File dest = new File(PathUtil.getImgBasePath() + relativeAddr);

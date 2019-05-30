@@ -49,7 +49,7 @@ public class ShopServiceTest extends BaseTest{
 				//设置状态为check，审核状态
 				shop.setEnableStatus(ShopStateEnum.CHECK.getState());
 				shop.setAdvice("审核中");
-				File shopImg = new File("C:/Users/Administrator/Desktop/xiaohuangren.jpg");
+				File shopImg = new File("D:/Users/baidu/work/image/xiaohuangren.jpg");
 				System.out.println(shopImg.toString());
 				ShopExecution se = shopService.addShop(shop, shopImg );
 				assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
