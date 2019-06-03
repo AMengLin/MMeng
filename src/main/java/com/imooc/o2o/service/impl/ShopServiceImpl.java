@@ -1,6 +1,7 @@
 package com.imooc.o2o.service.impl;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,12 @@ public class ShopServiceImpl implements ShopService {
 	/**
 	 * @param shop
 	 *            新增的店铺信息
-	 * @param shopImg
+	 * @param shopImgInputStream
 	 *            店铺图片
 	 * @return
 	 */
 	@Transactional
-	public ShopExecution addShop(Shop shop, File shopImg) throws ShopOperationException{
+	public ShopExecution addShop(Shop shop, InputStream shopImgInputStream,String fileName) throws ShopOperationException{
 
 		// 判断商铺信息是否为空
 		if (shop == null) {
@@ -52,11 +53,11 @@ public class ShopServiceImpl implements ShopService {
 			if (effectedNum <= 0) {
 				throw new ShopOperationException("店铺创建失败");
 			} else {
-				if (shopImg != null) {
+				if (shopImgInputStream != null) {
 					System.out.println(effectedNum);
 					// 存储图片
 					try {
-						addShopImg(shop, shopImg);
+						addShopImg(shop, shopImgInputStream,fileName);
 						//System.out.println(effectedNum+"s");
 						System.out.println("是否成功进去。。。");
 					} catch (Exception e) {
@@ -76,11 +77,11 @@ public class ShopServiceImpl implements ShopService {
 		return new ShopExecution(ShopStateEnum.CHECK, shop);
 	}
 	
-	private void addShopImg(Shop shop, File shopImg) { 
+	private void addShopImg(Shop shop, InputStream shopImgInputStream,String fileName) { 
 		// 获取shop图片目录的相对值路径
 		String dest = PathUtil.getShopImagePath(shop.getShopId());
 		//System.out.println("地址:"+dest.toString());
-		String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
+		String shopImgAddr = ImageUtil.generateThumbnail(shopImgInputStream,fileName,dest);
 		shop.setShopImg(shopImgAddr);
 		
 	}

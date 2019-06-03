@@ -3,6 +3,9 @@ package com.imooc.o2o.service;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Date;
 
 import org.junit.Test;
@@ -22,7 +25,7 @@ public class ShopServiceTest extends BaseTest{
 	private ShopService shopService;
 	
 	@Test
-	public void testAddShop(){
+	public void testAddShop() throws FileNotFoundException{
 		//创建商品对象888
 				Shop shop = new Shop();
 				//创建个人信息对象
@@ -40,18 +43,20 @@ public class ShopServiceTest extends BaseTest{
 				shop.setArea(area);
 				shop.setShopCategory(shopCategory);
 				//给店铺添加测试数据
-				shop.setShopName("宅小野奶茶35");
-				shop.setShopDesc("好喝的奶茶35");
-				shop.setShopAddr("上川店35");
-				shop.setPhone("18613650");
+				shop.setShopName("宅小野奶茶88");
+				shop.setShopDesc("好喝的奶茶88");
+				shop.setShopAddr("上川店3588");
+				shop.setPhone("888888888");
 				shop.setCreateTime(new Date());
 				shop.setPriority(1);
 				//设置状态为check，审核状态
 				shop.setEnableStatus(ShopStateEnum.CHECK.getState());
 				shop.setAdvice("审核中");
 				File shopImg = new File("D:/Users/baidu/work/image/xiaohuangren.jpg");
+				//将file转化成inputStream类型
+				InputStream is = new FileInputStream(shopImg);
 				System.out.println(shopImg.toString());
-				ShopExecution se = shopService.addShop(shop, shopImg );
+				ShopExecution se = shopService.addShop(shop, is,shopImg.getName());
 				assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
 	}
 }

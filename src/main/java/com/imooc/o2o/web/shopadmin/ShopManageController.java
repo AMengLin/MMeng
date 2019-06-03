@@ -24,6 +24,7 @@ import com.imooc.o2o.dto.ShopExecution;
 import com.imooc.o2o.entity.PersonInfo;
 import com.imooc.o2o.entity.Shop;
 import com.imooc.o2o.enums.ShopStateEnum;
+import com.imooc.o2o.exceptions.ShopOperationException;
 import com.imooc.o2o.service.ShopService;
 import com.imooc.o2o.util.HttpServletRequestUtil;
 import com.imooc.o2o.util.ImageUtil;
@@ -84,15 +85,15 @@ public class ShopManageController {
 			owner.setUserId(1L);
 			shop.setOwner(owner);
 			//创建一个file文件
-			File shopImgFile = new File(PathUtil.getImgBasePath()+ImageUtil.getRandomFileName());
+			/*File shopImgFile = new File(PathUtil.getImgBasePath()+ImageUtil.getRandomFileName());
 			try {
 				shopImgFile.createNewFile();
 			} catch (IOException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());
 				return modelMap;
-			}
-			try {
+			}*/
+		/*	try {
 				//然后把前台传过来的信息添加到shop中
 				//因为addShop的方法中的shopImg是CommonsMultipartFile类型，需要先转化成file类型
 				//调用inputStreamToFile,把shopImg.getInputStream()流中的内容读取进shopImgFile文件夹中，生成图片，最终是一个图片的路径
@@ -101,15 +102,25 @@ public class ShopManageController {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", e.getMessage());
 				return modelMap;
-			}
-			ShopExecution se = shopService.addShop(shop, shopImgFile);
-			//返回结果和ShopStateEnum枚举中审核的状态是一样的
-			if(se.getState()==ShopStateEnum.CHECK.getState()){
-				modelMap.put("success", true);
-			}else{
+			}*/
+			//shopImg.getOriginalFilename(),CommonsMultipartFile中的getOriginalFilename方法，可获取原本文件的名字
+			ShopExecution se;
+			try {
+				se = shopService.addShop(shop, shopImg.getInputStream(),shopImg.getOriginalFilename());
+				if(se.getState()==ShopStateEnum.CHECK.getState()){
+					modelMap.put("success", true);
+				}else{
+					modelMap.put("success", false);
+					modelMap.put("errMsg", se.getStateInfo());
+				}
+			}catch (ShopOperationException e) {
 				modelMap.put("success", false);
-				modelMap.put("errMsg", se.getStateInfo());
+				modelMap.put("errMsg", "上传图片不能为空");
+			}catch (IOException e) {
+				modelMap.put("success", false);
+				modelMap.put("errMsg", "上传图片不能为空");
 			}
+			//返回结果和ShopStateEnum枚举中审核的状态是一样的
 			return modelMap;
 		} else {
 			modelMap.put("success", false);
@@ -119,7 +130,7 @@ public class ShopManageController {
 	}
 
 	// 编写一个方法，把inputStream转化成file
-	private static void inputStreamToFile(InputStream ins, File file) {
+	/*private static void inputStreamToFile(InputStream ins, File file) {
 		// 定义一个输出流,最终结果将其转换成文件
 		FileOutputStream os = null;
 		try {
@@ -148,6 +159,6 @@ public class ShopManageController {
 				throw new RuntimeException("inputStreamToFile关闭io产生异常"+e.getMessage());
 			}
 		}
-	}
+	}*/
 
 }
