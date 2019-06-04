@@ -2,6 +2,7 @@ package com.imooc.o2o.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -55,11 +56,11 @@ public class ImageUtil {
 	 *            处理好的缩略图所在的位置
 	 * @return
 	 */
-	public static String generateThumbnail(File thumbnail, String targerAddr) {
+	public static String generateThumbnail(InputStream thumbnailInputStream,String fileName, String targerAddr) {
 		// 获取不重复的名字
 		String realFileName = getRandomFileName();
 		// 获取用户传过来的扩扩展名,jpg,png
-		String extension = getFileExtension(thumbnail);
+		String extension = getFileExtension(fileName);
 		// 如果目标不存在，则自动创建
 		makeDirPath(targerAddr);
 		// 获取文件储存的相对路径（带文件名）
@@ -71,7 +72,7 @@ public class ImageUtil {
 		logger.debug("basePath is :" + basePath);
 		try {
 			// 调用Thumbnails生成有水印的缩略图
-			Thumbnails.of(thumbnail).size(200, 200)
+			Thumbnails.of(thumbnailInputStream).size(200, 200)
 			////ImageIO.read(new File(basePath + "/watermark.jpg") : 读取水印图片的路径
 					.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
 					.outputQuality(0.8f).toFile(dest);
@@ -98,14 +99,11 @@ public class ImageUtil {
 
 	/**
 	 * 获取输入文件流的扩展名
-	 * 
 	 * @param thumbnail
 	 * @return
 	 */
-	private static String getFileExtension(File cfile) {
-		// 获取输入文件流的文件名
-		String originFileName = cfile.getName();
-		return originFileName.substring(originFileName.lastIndexOf("."));
+	private static String getFileExtension(String fileName) {
+		return fileName.substring(fileName.lastIndexOf("."));
 	}
 
 	/**
