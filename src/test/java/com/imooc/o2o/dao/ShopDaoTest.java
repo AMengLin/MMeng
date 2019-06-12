@@ -54,7 +54,7 @@ public class ShopDaoTest extends BaseTest{
 		Shop shop = new Shop();
 		shop.setShopId(43L);
 		shop.setShopDesc("测试描述558");
-		shop.setShopAddr("8888888");
+		shop.setShopAddr("88888881");
 		shop.setLastEditTime(new Date());
 		int effectedNum = shopDao.updateShop(shop);
 		assertEquals(1, effectedNum);

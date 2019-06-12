@@ -8,6 +8,9 @@ $(function(){
 	var initUrl = '/o2o/shopadmin/getshopinitinfo';
 	//注册店铺
 	var registerUrl = '/o2o/shopadmin/registershop'
+	//js文件被加载的时候，调用getShopInitInfo方法，去后台获取区域信息和店铺类别信息，加载到前端页面上
+	alert(initUrl);
+	getShopInitInfo();
 	//获取店铺信息的方法
 	function getShopInitInfo(){
 		//initUrl:路径   data:后台通过json传过来的数据
@@ -31,7 +34,54 @@ $(function(){
 					+ item.areaName + '</option>';
 				})
 				//获取到数据后，把数据填充到前台页面上
+				$('#shop-category').html(tempHtml);
+				$('#area').html(tempAreaHtml);
 			}
-		})
+		});
+		//创建提交数据的方式
+		$('#submit').click(function(){
+			//获取表单数据
+			//创建shop实体，也就是json对象
+			var shop = {};
+			shop.shopName = $('#shop-name').val();
+			shop.shopAddr = $('#shop-addr').val();
+			shop.phone = $('#shop-phone').val();
+			shop.shopDesc = $('#shop-desc').val();
+			//双重否定定于肯定，当前选择的下拉属性
+			shop.shopCategory = {
+				shopCategoryId:$('#shop-category').find('option').not(function(){
+					return !this.select;
+				}).data('id')
+			};
+			shop.area = {
+				areaId:	$('#area').find('option').not(function(){
+					return !this.select
+				}).data('id')
+			};
+			//获取文件流
+			var shopImg = $('#shop-img')[0].files[0];
+			//创建表单对象，用于接收参数传递到后台
+			var formData = new formData();
+			//添加图片流到表单中
+			formData.append('shopImg',shopImg);
+			//将shop json对象转成字符流保存至表单对象key为shopStr的键值对里
+			formData.append('shopStr',JSON.stringify(shop));
+			//将数据传到后台处理
+			$.ajax({
+				
+				url : registerUrl,
+				type : 'post',
+				data : formData,
+				contentType : false,
+				proceesData : false,
+				success:function(data){
+					if(data.success){
+						$.toast("提交成功!");
+					}else{
+						$.total("提交失败!"+data.errMsg);
+					}
+				}
+			});
+		});
 	}
 })

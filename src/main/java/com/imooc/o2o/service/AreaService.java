@@ -9,5 +9,5 @@ public interface AreaService {
 	 * 获取区域列表aaa
 	 * @return
 	 */
-	List<Area> getList();
+	List<Area> getAreaList();
 }

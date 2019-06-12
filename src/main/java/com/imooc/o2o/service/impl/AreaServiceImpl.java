@@ -18,7 +18,7 @@ public class AreaServiceImpl implements AreaService{
 	/**
 	 * 获取区域列表
 	 */
-	public List<Area> getList() {
+	public List<Area> getAreaList() {
 		return areaDao.queryArea();
 	}
 }

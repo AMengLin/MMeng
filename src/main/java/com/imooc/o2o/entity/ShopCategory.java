@@ -24,7 +24,7 @@ public class ShopCategory {
 	private Date createTime;
 	// 最近的更新时间
 	private Date lastEditTime;
-	// 父类别
+	// 父类别,上级id，这个也是一个店铺类别，直接写成实体类
 	private ShopCategory parent;
 
 	public Long getShopCategoryId() {

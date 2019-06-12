@@ -25,7 +25,7 @@ public class AreaAction {
 	public Map<String,Object> listArea(){
 		Map<String,Object> map = new HashMap<String,Object>();
 		//查询返回区域的所有对象
-		List<Area> list = areaService.getList();
+		List<Area> list = areaService.getAreaList();
 		//把区域对象封装到map集合中返回给前端
 		try {
 			map.put("rows", list);

@@ -5,7 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +23,14 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.imooc.o2o.dto.ShopExecution;
+import com.imooc.o2o.entity.Area;
 import com.imooc.o2o.entity.PersonInfo;
 import com.imooc.o2o.entity.Shop;
+import com.imooc.o2o.entity.ShopCategory;
 import com.imooc.o2o.enums.ShopStateEnum;
 import com.imooc.o2o.exceptions.ShopOperationException;
+import com.imooc.o2o.service.AreaService;
+import com.imooc.o2o.service.ShopCategoryService;
 import com.imooc.o2o.service.ShopService;
 import com.imooc.o2o.util.HttpServletRequestUtil;
 import com.imooc.o2o.util.ImageUtil;
@@ -43,6 +49,36 @@ public class ShopManageController {
 
 	@Autowired
 	private ShopService shopService;
+	@Autowired
+	private ShopCategoryService shopCategoryService;
+	@Autowired
+	private AreaService areaService;
+
+	/**
+	 * 获取店铺类别和区域列表
+	 * @return
+	 */
+	@RequestMapping(value = "/getshopinitinfo", method = RequestMethod.GET)
+	@ResponseBody
+	private Map<String, Object> getShopInitInfo() {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		// 创建店铺列表集合以及区域集合
+		List<ShopCategory> shopCategoryList = new ArrayList<ShopCategory>();
+		List<Area> areasList = new ArrayList<Area>();
+		try {
+			// 调用service层，查询出店铺列表数据
+			shopCategoryList = shopCategoryService.getShopCategoryList(new ShopCategory());
+			// 调用service层，查询出区域列表数据
+			areasList = areaService.getAreaList();
+			modelMap.put("shopCategoryList", shopCategoryList);
+			modelMap.put("areasList", areasList);
+			modelMap.put("success",true);
+		} catch (Exception e) {
+			modelMap.put("success",false);
+			modelMap.put("errMsg",e.getMessage());
+		}
+		return modelMap;
+	}
 
 	@RequestMapping(value = "/registershop", method = RequestMethod.POST)
 	@ResponseBody
@@ -84,43 +120,41 @@ public class ShopManageController {
 			PersonInfo owner = new PersonInfo();
 			owner.setUserId(1L);
 			shop.setOwner(owner);
-			//创建一个file文件
-			/*File shopImgFile = new File(PathUtil.getImgBasePath()+ImageUtil.getRandomFileName());
-			try {
-				shopImgFile.createNewFile();
-			} catch (IOException e) {
-				modelMap.put("success", false);
-				modelMap.put("errMsg", e.getMessage());
-				return modelMap;
-			}*/
-		/*	try {
-				//然后把前台传过来的信息添加到shop中
-				//因为addShop的方法中的shopImg是CommonsMultipartFile类型，需要先转化成file类型
-				//调用inputStreamToFile,把shopImg.getInputStream()流中的内容读取进shopImgFile文件夹中，生成图片，最终是一个图片的路径
-				inputStreamToFile(shopImg.getInputStream(),shopImgFile);
-			} catch (IOException e) {
-				modelMap.put("success", false);
-				modelMap.put("errMsg", e.getMessage());
-				return modelMap;
-			}*/
-			//shopImg.getOriginalFilename(),CommonsMultipartFile中的getOriginalFilename方法，可获取原本文件的名字
+			// 创建一个file文件
+			/*
+			 * File shopImgFile = new
+			 * File(PathUtil.getImgBasePath()+ImageUtil.getRandomFileName());
+			 * try { shopImgFile.createNewFile(); } catch (IOException e) {
+			 * modelMap.put("success", false); modelMap.put("errMsg",
+			 * e.getMessage()); return modelMap; }
+			 */
+			/*
+			 * try { //然后把前台传过来的信息添加到shop中
+			 * //因为addShop的方法中的shopImg是CommonsMultipartFile类型，需要先转化成file类型
+			 * //调用inputStreamToFile,把shopImg.getInputStream()
+			 * 流中的内容读取进shopImgFile文件夹中，生成图片，最终是一个图片的路径
+			 * inputStreamToFile(shopImg.getInputStream(),shopImgFile); } catch
+			 * (IOException e) { modelMap.put("success", false);
+			 * modelMap.put("errMsg", e.getMessage()); return modelMap; }
+			 */
+			// shopImg.getOriginalFilename(),CommonsMultipartFile中的getOriginalFilename方法，可获取原本文件的名字
 			ShopExecution se;
 			try {
-				se = shopService.addShop(shop, shopImg.getInputStream(),shopImg.getOriginalFilename());
-				if(se.getState()==ShopStateEnum.CHECK.getState()){
+				se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+				if (se.getState() == ShopStateEnum.CHECK.getState()) {
 					modelMap.put("success", true);
-				}else{
+				} else {
 					modelMap.put("success", false);
 					modelMap.put("errMsg", se.getStateInfo());
 				}
-			}catch (ShopOperationException e) {
+			} catch (ShopOperationException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", "上传图片不能为空");
-			}catch (IOException e) {
+			} catch (IOException e) {
 				modelMap.put("success", false);
 				modelMap.put("errMsg", "上传图片不能为空");
 			}
-			//返回结果和ShopStateEnum枚举中审核的状态是一样的
+			// 返回结果和ShopStateEnum枚举中审核的状态是一样的
 			return modelMap;
 		} else {
 			modelMap.put("success", false);
@@ -130,35 +164,20 @@ public class ShopManageController {
 	}
 
 	// 编写一个方法，把inputStream转化成file
-	/*private static void inputStreamToFile(InputStream ins, File file) {
-		// 定义一个输出流,最终结果将其转换成文件
-		FileOutputStream os = null;
-		try {
-			os = new FileOutputStream(file);
-			int bytesRead = 0;
-			// 定义一个默认值为1024的byte的数组,调用buffer读取InputStream里面的内容
-			byte[] buffer = new byte[1024];
-			// 把InputStream的内容读取到buffer中
-			while ((bytesRead = ins.read(buffer)) != -1) {
-				// 把buffer的内容不断写入到输出流中,读满1024的字节，就往输出流里写入一次，直到都满为止
-				os.write(buffer, 0, bytesRead);
-			}
-		} catch (Exception e) {
-			throw new RuntimeException("调用inputStreamToFile产生异常"+e.getMessage());
-			
-		}finally {
-			//把输出刘流和输入流都关闭掉
-			try{
-				if(os!=null){
-					os.close();
-				}
-				if(ins!=null){
-					ins.close();
-				}
-			}catch(IOException e){
-				throw new RuntimeException("inputStreamToFile关闭io产生异常"+e.getMessage());
-			}
-		}
-	}*/
+	/*
+	 * private static void inputStreamToFile(InputStream ins, File file) { //
+	 * 定义一个输出流,最终结果将其转换成文件 FileOutputStream os = null; try { os = new
+	 * FileOutputStream(file); int bytesRead = 0; //
+	 * 定义一个默认值为1024的byte的数组,调用buffer读取InputStream里面的内容 byte[] buffer = new
+	 * byte[1024]; // 把InputStream的内容读取到buffer中 while ((bytesRead =
+	 * ins.read(buffer)) != -1) { //
+	 * 把buffer的内容不断写入到输出流中,读满1024的字节，就往输出流里写入一次，直到都满为止 os.write(buffer, 0,
+	 * bytesRead); } } catch (Exception e) { throw new
+	 * RuntimeException("调用inputStreamToFile产生异常"+e.getMessage());
+	 * 
+	 * }finally { //把输出刘流和输入流都关闭掉 try{ if(os!=null){ os.close(); }
+	 * if(ins!=null){ ins.close(); } }catch(IOException e){ throw new
+	 * RuntimeException("inputStreamToFile关闭io产生异常"+e.getMessage()); } } }
+	 */
 
 }
