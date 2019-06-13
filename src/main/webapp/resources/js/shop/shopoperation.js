@@ -9,7 +9,6 @@ $(function(){
 	//注册店铺
 	var registerUrl = '/o2o/shopadmin/registershop'
 	//js文件被加载的时候，调用getShopInitInfo方法，去后台获取区域信息和店铺类别信息，加载到前端页面上
-	alert(initUrl);
 	getShopInitInfo();
 	//获取店铺信息的方法
 	function getShopInitInfo(){
@@ -28,7 +27,7 @@ $(function(){
 					+ item.shopCategoryName + '</option>';
 					//遍历后，把shopCategoryName填充进去
 				})
-				data.areaList.map(function(data,index){
+				data.areaList.map(function(item,index){
 					//遍历后，把areaId及areaName填充进去
 					tempAreaHtml+='<option data-id="' + item.areaId + '">'
 					+ item.areaName + '</option>';
@@ -66,6 +65,14 @@ $(function(){
 			formData.append('shopImg',shopImg);
 			//将shop json对象转成字符流保存至表单对象key为shopStr的键值对里
 			formData.append('shopStr',JSON.stringify(shop));
+			//获取验证码
+			var verifyCodeActual = $('#j_captcha').val();
+			if(!verifyCodeActual){
+				$.toast("请输入验证码");
+				return;
+			}else{
+				formData.append('verifyCodeActual',verifyCodeActual);
+			}
 			//将数据传到后台处理
 			$.ajax({
 				
@@ -80,6 +87,7 @@ $(function(){
 					}else{
 						$.total("提交失败!"+data.errMsg);
 					}
+					$('#captcha_img').click();
 				}
 			});
 		});

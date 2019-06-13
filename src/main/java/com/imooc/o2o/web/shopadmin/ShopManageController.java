@@ -32,6 +32,7 @@ import com.imooc.o2o.exceptions.ShopOperationException;
 import com.imooc.o2o.service.AreaService;
 import com.imooc.o2o.service.ShopCategoryService;
 import com.imooc.o2o.service.ShopService;
+import com.imooc.o2o.util.CodeUtil;
 import com.imooc.o2o.util.HttpServletRequestUtil;
 import com.imooc.o2o.util.ImageUtil;
 import com.imooc.o2o.util.PathUtil;
@@ -64,14 +65,14 @@ public class ShopManageController {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		// 创建店铺列表集合以及区域集合
 		List<ShopCategory> shopCategoryList = new ArrayList<ShopCategory>();
-		List<Area> areasList = new ArrayList<Area>();
+		List<Area> areaList = new ArrayList<Area>();
 		try {
 			// 调用service层，查询出店铺列表数据
 			shopCategoryList = shopCategoryService.getShopCategoryList(new ShopCategory());
 			// 调用service层，查询出区域列表数据
-			areasList = areaService.getAreaList();
+			areaList = areaService.getAreaList();
 			modelMap.put("shopCategoryList", shopCategoryList);
-			modelMap.put("areasList", areasList);
+			modelMap.put("areaList", areaList);
 			modelMap.put("success",true);
 		} catch (Exception e) {
 			modelMap.put("success",false);
@@ -84,6 +85,12 @@ public class ShopManageController {
 	@ResponseBody
 	private Map<String, Object> registerShop(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
+		//如果输入的验证码和图片的验证码不一样
+		if(!CodeUtil.checkVerifyCode(request)){
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "输入了错误的验证码");
+			return modelMap;
+		}
 		// 接受并转化相应的参数，包括店铺信息以及图片信息
 		String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
 		// 将json数据转化成实体类对象

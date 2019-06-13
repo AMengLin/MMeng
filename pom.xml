@@ -89,10 +89,10 @@
 			<version>2.8.7</version>
 		</dependency>
 		<dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.7</version>
-        </dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.7</version>
+		</dependency>
 
 		<!-- Map工具类 对标准java Collection的扩展 spring-core.jar需commons-collections.jar -->
 		<dependency>
@@ -129,7 +129,7 @@
 			<artifactId>thumbnailator</artifactId>
 			<version>0.4.8</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha -->
+		<!-- 验证码 https://mvnrepository.com/artifact/com.github.penggle/kaptcha -->
 		<dependency>
 			<groupId>com.github.penggle</groupId>
 			<artifactId>kaptcha</artifactId>
@@ -173,4 +173,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
 </project>
