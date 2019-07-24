@@ -1,54 +1,24 @@
-2019-05-30 14:24:07.441 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 14:24:07.657 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 14:24:07.279(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 14:24:07.954 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 14:42:11.476 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 14:42:11.550 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 14:42:11.439(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 14:42:11.553 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 14:46:45.641 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 14:46:45.708 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 14:46:45.595(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 14:46:45.710 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 14:48:04.084 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 14:48:04.198 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 14:48:04.033(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 14:48:04.200 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 15:39:52.291 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 15:39:52.502 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 15:39:52.182(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 15:39:52.507 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 15:42:14.681 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 15:42:14.825 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 15:42:14.566(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 15:42:14.827 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 15:50:23.803 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 15:50:24.586 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 15:50:23.543(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 15:50:24.589 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 16:08:25.649 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 16:08:25.799 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 16:08:25.506(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 16:08:25.805 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 16:23:36.353 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 16:23:36.439 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 16:23:36.272(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 16:23:36.441 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 16:26:41.426 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 16:26:41.542 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶88(String), 宅小野奶茶88(String), 上川店88(String), 123456711111188(String), null, 1(Integer), 2019-05-30 16:26:40.476(Timestamp), 0(Integer), null
-2019-05-30 16:26:41.649 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 17:02:00.435 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 17:02:00.668 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 1234567111111(String), null, 1(Integer), 2019-05-30 17:02:00.228(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 17:02:00.673 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 17:02:00.701 [main] DEBUG com.imooc.o2o.util.ImageUtil - current complete addr is :D:\projectdev\image2019053017020089655.jpgD:\upload\images\item\shop\50\
-2019-05-30 17:02:00.702 [main] DEBUG com.imooc.o2o.util.ImageUtil - basePath is :/D:/localstore/MMeng/target/test-classes/
-2019-05-30 17:02:02.676 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, priority=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-05-30 17:02:02.679 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==> Parameters: 宅小野奶茶35(String), 好喝的奶茶35(String), 上川店35(String), 1234567111111(String), 2019053017020089655.jpgD:\upload\images\item\shop\50\(String), 1(Integer), 2019-05-30 17:02:00.228(Timestamp), 0(Integer), 审核中(String), 2(Integer), 10(Long), 50(Long)
-2019-05-30 17:02:02.723 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
-2019-05-30 17:23:52.145 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 17:23:52.309 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 18613650(String), null, 1(Integer), 2019-05-30 17:23:52.054(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 17:23:52.314 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 17:23:52.357 [main] DEBUG com.imooc.o2o.util.ImageUtil - current complete addr is :D:\projectdev\imageD:\upload\images\item\shop\51\2019053017235283568.jpg
-2019-05-30 17:23:52.358 [main] DEBUG com.imooc.o2o.util.ImageUtil - basePath is :/D:/localstore/MMeng/target/test-classes/
-2019-05-30 17:23:52.929 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, priority=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-05-30 17:23:52.931 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==> Parameters: 宅小野奶茶35(String), 好喝的奶茶35(String), 上川店35(String), 18613650(String), D:\upload\images\item\shop\51\2019053017235283568.jpg(String), 1(Integer), 2019-05-30 17:23:52.054(Timestamp), 0(Integer), 审核中(String), 2(Integer), 10(Long), 51(Long)
-2019-05-30 17:23:52.933 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
-2019-05-30 17:41:34.538 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone, shop_img,priority,create_time,enable_status,advice) values (?,?,?,?,?, ?,?,?,?,?,?,?) 
-2019-05-30 17:41:34.622 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 10(Long), 宅小野奶茶35(String), 宅小野奶茶35(String), 上川店35(String), 18613650(String), null, 1(Integer), 2019-05-30 17:41:34.485(Timestamp), 0(Integer), 审核中(String)
-2019-05-30 17:41:34.624 [main] DEBUG com.imooc.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-30 17:41:34.638 [main] DEBUG com.imooc.o2o.util.ImageUtil - current complete addr is :D:\projectdev\imageD:\upload\images\item\shop\52\2019053017413490255.jpg
-2019-05-30 17:41:34.639 [main] DEBUG com.imooc.o2o.util.ImageUtil - basePath is :/D:/localstore/MMeng/target/test-classes/
-2019-05-30 17:41:34.953 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, priority=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-05-30 17:41:34.955 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - ==> Parameters: 宅小野奶茶35(String), 好喝的奶茶35(String), 上川店35(String), 18613650(String), D:\upload\images\item\shop\52\2019053017413490255.jpg(String), 1(Integer), 2019-05-30 17:41:34.485(Timestamp), 0(Integer), 审核中(String), 2(Integer), 10(Long), 52(Long)
-2019-05-30 17:41:34.956 [main] DEBUG com.imooc.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2019-06-13 00:32:44.075 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority DESC 
+2019-06-13 00:32:44.154 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-06-13 00:32:44.188 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 21
+2019-06-13 00:32:44.219 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id = ? order by priority DESC 
+2019-06-13 00:32:44.220 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 10(Long)
+2019-06-13 00:32:44.223 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2019-06-13 01:26:11.239 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-06-13 01:26:11.314 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - ==> Parameters: 
+2019-06-13 01:26:11.340 [main] DEBUG com.imooc.o2o.dao.AreaDao.queryArea - <==      Total: 2
+2019-06-13 21:13:53.099 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority DESC 
+2019-06-13 21:13:53.176 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-06-13 21:13:53.421 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 15
+2019-06-13 21:14:15.671 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority DESC 
+2019-06-13 21:14:15.721 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-06-13 21:14:15.750 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 15
+2019-06-13 21:14:15.793 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null and parent_id = ? order by priority DESC 
+2019-06-13 21:14:15.793 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 10(Long)
+2019-06-13 21:14:15.833 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2019-06-13 22:20:09.564 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null and parent_id = ? order by priority DESC 
+2019-06-13 22:20:09.621 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 10(Long)
+2019-06-13 22:20:09.649 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2
+2019-06-13 22:21:59.712 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null and parent_id = ? order by priority DESC 
+2019-06-13 22:21:59.756 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 10(Long)
+2019-06-13 22:21:59.784 [main] DEBUG c.imooc.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 2

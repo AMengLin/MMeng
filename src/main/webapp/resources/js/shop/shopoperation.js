@@ -48,19 +48,20 @@ $(function(){
 			shop.shopDesc = $('#shop-desc').val();
 			//双重否定定于肯定，当前选择的下拉属性
 			shop.shopCategory = {
-				shopCategoryId:$('#shop-category').find('option').not(function(){
-					return !this.select;
-				}).data('id')
-			};
-			shop.area = {
-				areaId:	$('#area').find('option').not(function(){
-					return !this.select
-				}).data('id')
-			};
+					shopCategoryId : $('#shop-category').find('option').not(function() {
+						return !this.selected;
+					}).data('id')
+				};
+				// 选择选定好的区域信息
+				shop.area = {
+					areaId : $('#area').find('option').not(function() {
+						return !this.selected;
+					}).data('id')
+				};
 			//获取文件流
 			var shopImg = $('#shop-img')[0].files[0];
 			//创建表单对象，用于接收参数传递到后台
-			var formData = new formData();
+			var formData = new FormData();
 			//添加图片流到表单中
 			formData.append('shopImg',shopImg);
 			//将shop json对象转成字符流保存至表单对象key为shopStr的键值对里
@@ -80,7 +81,8 @@ $(function(){
 				type : 'post',
 				data : formData,
 				contentType : false,
-				proceesData : false,
+				processData : false,
+				cache : false,
 				success:function(data){
 					if(data.success){
 						$.toast("提交成功!");
